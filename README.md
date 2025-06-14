@@ -58,10 +58,10 @@ DEEPSEGML_UPLOAD/
 ### 创建并运行镜像
 ```bash
 # 1、登录比赛账号(或者其他账号，环境相同也可以)
-docker login hubdocker.aminer.cn -u "d6eecf31ed8c402ea4afa1505c3afe94" -p "@9,1yMCH!rK{"
+docker login hubdocker.aminer.cn -u "*********" -p "******"
 
 # 2、创建镜像（版本号0.1镜像名test可改）
-docker build -t hubdocker.aminer.cn/d6eecf31ed8c402ea4afe1505c3afe94/test:0.1 .
+docker build -t hubdocker.aminer.cn/****/test:0.1 .
 
 # 3、运行镜像
 docker run -it hubdocker.aminer.cn/d6eecf31ed8c402ea4afa1505c3afe94/test:0.1 /bin/bash
