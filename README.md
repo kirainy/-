@@ -62,7 +62,7 @@ docker login hubdocker.aminer.cn -u "*********" -p "******"
 docker build -t hubdocker.aminer.cn/****/test:0.1 .
 
 # 3、运行镜像
-docker run -it hubdocker.aminer.cn/d6eecf31ed8c402ea4afa1505c3afe94/test:0.1 /bin/bash
+docker run -it hubdocker.aminer.cn/****/test:0.1 /bin/bash
 ```
 ### 数据处理
 1. 数据预处理，默认路径为`app\devlop_home\assets\复赛数据`
