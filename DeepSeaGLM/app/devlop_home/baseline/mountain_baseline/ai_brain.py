@@ -18,23 +18,9 @@ else:
 
 ################更改API###########################
 
-os.environ["ZHIPUAI_API_KEY"] = "7915b06988a447c0b0bf1ef153becc67.MoW2lUeGeypqZcIR"
+os.environ["ZHIPUAI_API_KEY"] = "your-api-key"
     
-# 配置LLM接口参数
-# llm_config = {
-#     "api_type": "openai",
-#     "model": "gpt-4-1106-preview",
-#     "base_url": "https://xiaoai.plus/v1/",
-#     "api_key": "sk-Hu0lH7Ac9sZwtIpjUaBZp0oxD5H2QE8Cfa7sYVBUprvKHIGA"
-# }
 
-# # 初始化客户端
-# client = OpenAI(
-#     base_url=llm_config["base_url"],
-#     api_key=llm_config["api_key"],
-#     # 如果使用自签名证书需要关闭验证
-#     # http_client=httpx.Client(verify=False)
-# )
 def create_chat_completion(messages, model="glm-4-plus"):
 # def create_chat_completion(messages, model=llm_config["model"]):
     client = ZhipuAI()
@@ -650,40 +636,6 @@ if __name__ == "__main__":
     bb = get_end_answer(question,aa)
     print("*******************最终答案***********************")
     print(bb)
-    # 文件路径
-    """
-    question_path = "assets/question.jsonl"
-    result_path = "./result.jsonl"
-    intermediate_result_path = "./result_zj.jsonl"
-    # 读取问题文件
-    with open(question_path, "r", encoding="utf-8") as f:
-        questions = [json.loads(line.strip()) for line in f]
-    # 处理每个问题并保存结果
-    questions=questions[:1] # 注释掉这一行以逐个回答全部问题
-    results = []
-    for question in questions:
-        query = question["question"]
-        # 调用AI模块获取答案
-        try:
-            answer =get_answer(question=query)
-            answer_str = str(answer)
-            print(f"Question: {query}")
-            print(f"Answer: {answer_str}")
-            result = {
-                "id": question["id"],
-                "question": query,
-                "answer": answer_str
-            }
-            results.append(result)
-            # 将中间结果写入文件
-            with open(intermediate_result_path, "w", encoding="utf-8") as f:
-                f.write("\n".join([json.dumps(res, ensure_ascii=False) for res in results]))
-        except Exception as e:
-            print(f"Error processing question {question['id']}: {e}")
-    # 将最终结果写入文件
-    with open(result_path, "w", encoding="utf-8") as f:
-        f.write("\n".join([json.dumps(res, ensure_ascii=False) for res in results]))
 
-"""
 
 # %%
